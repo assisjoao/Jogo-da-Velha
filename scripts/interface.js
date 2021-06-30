@@ -1,46 +1,34 @@
-// document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () =>{
 
-//     let squares = document.querySelectorAll(".square");
+    let squares = document.querySelectorAll(".square");
 
-//     squares.forEach((square) => {
-//         square.addEventListener('click', handleClick);
-//     })
-
-// })
-
-// function handleClick(event) {
+    squares.forEach((square) => {
+        square.addEventListener('click', handleClick);
+    })
 
 
-//     let square = event.target;
-//     let postion = square.id;
 
-//     if (handleMove(postion)) {
+})
 
-//         setTimeout(() => {
-//             alert(" O Jogo Acabou - O Vencedor foi " + playerTime);
-//         }, 10);
+function handleClick (event) {
 
-//     };
-//     updateSquare(postion);
-// }
+    let square = event.target;
+    let position = square.id;
 
-// function updateSquare(postion) {
-//     let square = document.getElementById(postion.toString());
-//     let symbol = board[postion];
-//     square.innerHTML = `<div class='${symbol}'></div>`
-// }
+    handleMove (position);
+    updateSquares();
+}
 
-// function updateSquares() {
+function updateSquares (){
 
-//     let squares = document.querySelectorAll(".square");
+    let squares = document.querySelectorAll(".square");
 
-//     squares.forEach((square) => {
-//         let postion = square.id;
-//         let symbol = board[postion];
+    squares.forEach((square) => {
+        let position = square.id;
+        let symbol = board[position];
 
-//         if (symbol != '') {
-//             square.innerHTML = `<div class='${symbol}'></div>`
-//         }
-//     })
-
-// }
+        if (symbol != ''){
+            square.innerHTML = `<div class='${symbol}'></div>`
+        }
+    })
+}
